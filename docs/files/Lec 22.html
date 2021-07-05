@@ -1,0 +1,1088 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summary Statistics &#8212; Introducción al Análisis de Datos para Economistas en Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Missing Data" href="Lec%2023.html" />
+    <link rel="prev" title="Rank and Sort" href="Lec%2021.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introducción al Análisis de Datos para Economistas en Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Sobre_este_sitio.html">
+   Sobre este sitio
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analisis de datos con Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%207.html">
+   Creating Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%208.html">
+   Using arrays and scalars
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%209.html">
+   Indexing Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2010.html">
+   Array Transposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2011.html">
+   Universal Array Function
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2012.html">
+   Array Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2013.html">
+   Array Input and Output
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2014.html">
+   Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2015.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2016.html">
+   Index Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2017.html">
+   Reindexing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2018.html">
+   Drop Entry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2019.html">
+   Selecting Entries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2020.html">
+   Data Alignment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2021.html">
+   Rank and Sort
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Summary Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2023.html">
+   Missing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2024.html">
+   Index Hierarchy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2025.html">
+   Reading and Writing Text Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2026.html">
+   JSON with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2027.html">
+   HTML with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2028.html">
+   Excel with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2029.html">
+   Merge
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2030.html">
+   Merge on Index
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2031.html">
+   Concatenate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2032.html">
+   Combining DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2033.html">
+   Reshaping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2034.html">
+   Pivoting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2035.html">
+   Duplicates in DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2036.html">
+   Mapping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2037.html">
+   Replace
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2038.html">
+   Rename Index
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2039.html">
+   Binning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2040.html">
+   Outliers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2041.html">
+   Permutation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2042.html">
+   GroupBy on DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2043.html">
+   Groupby on Dict and Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2044.html">
+   Aggregation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2045.html">
+   Splitting, Applying and Combining
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2046.html">
+   Cross-Tabulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2047.html">
+   Installing Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2048.html">
+   Histograms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2049.html">
+   Kernel Density Estimation Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2050.html">
+   Combining Plot Styles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2051.html">
+   Box and Violin Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2052.html">
+   Regression Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2053.html">
+   Heatmaps and Clustered Matrices
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://www.jeshuanomics.com/">JeshuaNomics</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/files/Lec 22.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Jeshua-Romero-Guadarrama/IntroduccionCienciaDatosPython/master?urlpath=tree/book/files/Lec 22.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/Jeshua-Romero-Guadarrama/IntroduccionCienciaDatosPython/blob/master/book/files/Lec 22.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Lanzamiento Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <center><img style="float: center; width:90%" src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/JeshuaNomics.png">
+</center><br>
+<script src="https://kit.fontawesome.com/37a97f957d.js" crossorigin="anonymous"></script>
+<center><a href="https://www.datascience.jeshuanomics.com/" target="blank" style="font-size:20px;">
+Introducción a la Ciencia de Datos para Economistas en Python
+</a></center>
+<center><a href="https://www.jeshuanomics.com/" target="blank" style="font-size:20px;">
+Publicado por Jeshua Romero Guadarrama en colaboración con JeshuaNomics
+</a></center>
+<center><a href="https://www.jeshuanomics.com/" target="blank">
+____________________________________________________________________________________________________
+</a></center><br>
+<center>
+<a href="https://github.com/JeshuaNomics"><i class="fa fa-github" aria-hidden="true"></i><span class="label"></span> GitHub  </a>
+<a href="https://www.facebook.com/JeshuaNomics/"><i class="fa fa-facebook" aria-hidden="true"></i><span class="label"></span> Facebook  </a>
+<a href="https://twitter.com/JeshuaNomics"><i class="fa fa-twitter" aria-hidden="true"></i><span class="label"></span> Twitter  </a>
+<a href="https://www.linkedin.com/in/jeshua-romero-guadarrama/"><i class="fa fa-linkedin" aria-hidden="true"></i><span class="label"></span> Linkedin  </a>
+<a href="https://vk.com/jeshuanomics"><i class="fa fa-vk" aria-hidden="true"></i><span class="label"></span> Vkontakte  </a>
+<a href="https://jeshuanomics.tumblr.com/"><i class="fa fa-tumblr" aria-hidden="true"></i><span class="label"></span> Tumblr  </a>
+<a href="https://www.youtube.com/channel/UCY7f84mJGvMN7TF7XI4-Jgg?view_as=subscriber/"><i class="fa fa-youtube-play" aria-hidden="true"></i><span class="label"></span> YouTube  </a>
+<a href="https://www.instagram.com/JeshuaNomics/"><i class="fa fa-instagram" aria-hidden="true"></i><span class="label"></span> Instagram  </a>
+<a href="https://www.datascience.jeshuanomics.com/"><i class="fa fa-check" aria-hidden="true"></i><span class="label"></span> DataScience </a>
+</center><br><br><div class="section" id="summary-statistics">
+<h1>Summary Statistics<a class="headerlink" href="#summary-statistics" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now we&#39;ll learn about pandas built-in methods of summarizing data founr in DataFrames</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">Series</span><span class="p">,</span><span class="n">DataFrame</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s create a dataframe to work with</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">dframe1</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">],</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;One&#39;</span><span class="p">,</span><span class="s1">&#39;Two&#39;</span><span class="p">,</span><span class="s1">&#39;Three&#39;</span><span class="p">])</span>
+
+<span class="c1">#Show</span>
+<span class="n">dframe1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>One</th>
+      <th>Two</th>
+      <th>Three</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>  1</td>
+      <td> 2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>NaN</td>
+      <td> 3</td>
+      <td>  4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s see the sum() method in action</span>
+<span class="n">dframe1</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>One      1
+Two      5
+Three    4
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Notice how it ignores NaN values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#We can also over rows instead of columns</span>
+<span class="n">dframe1</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    3
+B    7
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Can also grab min and max values of dataframe</span>
+<span class="n">dframe1</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>One      1
+Two      2
+Three    4
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#As well as there index</span>
+<span class="n">dframe1</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>One      A
+Two      A
+Three    B
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Same deal with max, just replace min for max</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Show</span>
+<span class="n">dframe1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>One</th>
+      <th>Two</th>
+      <th>Three</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>  1</td>
+      <td> 2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>NaN</td>
+      <td> 3</td>
+      <td>  4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Can also do an accumulation sum</span>
+<span class="n">dframe1</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>One</th>
+      <th>Two</th>
+      <th>Three</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>  1</td>
+      <td> 2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>NaN</td>
+      <td> 5</td>
+      <td>  4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#A very useful feature is describe, which provides summary statistics</span>
+<span class="n">dframe1</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>One</th>
+      <th>Two</th>
+      <th>Three</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>  1</td>
+      <td> 2.000000</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>  1</td>
+      <td> 2.500000</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>NaN</td>
+      <td> 0.707107</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>  1</td>
+      <td> 2.000000</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>  1</td>
+      <td> 2.250000</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>  1</td>
+      <td> 2.500000</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>  1</td>
+      <td> 2.750000</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>  1</td>
+      <td> 3.000000</td>
+      <td>  4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can also get information on correlation and covariance</span>
+
+<span class="c1">#For more info on correlation and covariance, check out the videos below!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="c1"># For more information about Covariaance and Correlation</span>
+<span class="c1"># Check out these great videos!</span>
+<span class="c1"># Video credit: Brandon Foltz.</span>
+
+<span class="c1">#CoVariance</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;xGbpuFNR1ME&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="400"
+    height=300"
+    src="https://www.youtube.com/embed/xGbpuFNR1ME"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Correlation</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;4EXNedimDMs&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="400"
+    height=300"
+    src="https://www.youtube.com/embed/4EXNedimDMs"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now lets check correlation and covariance on some stock prices!</span>
+
+<span class="c1">#Pandas can get info off the web</span>
+<span class="kn">import</span> <span class="nn">pandas.io.data</span> <span class="k">as</span> <span class="nn">pdweb</span>
+
+<span class="c1">#Set datetime for date input</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="c1">#Get the closing prices</span>
+
+<span class="n">prices</span> <span class="o">=</span> <span class="n">pdweb</span><span class="o">.</span><span class="n">get_data_yahoo</span><span class="p">([</span><span class="s1">&#39;CVX&#39;</span><span class="p">,</span><span class="s1">&#39;XOM&#39;</span><span class="p">,</span><span class="s1">&#39;BP&#39;</span><span class="p">],</span> 
+                               <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> 
+                               <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))[</span><span class="s1">&#39;Adj Close&#39;</span><span class="p">]</span>
+<span class="c1">#Show preview</span>
+<span class="n">prices</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>BP</th>
+      <th>CVX</th>
+      <th>XOM</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2010-01-04</th>
+      <td> 46.97</td>
+      <td> 66.17</td>
+      <td> 60.26</td>
+    </tr>
+    <tr>
+      <th>2010-01-05</th>
+      <td> 47.30</td>
+      <td> 66.63</td>
+      <td> 60.50</td>
+    </tr>
+    <tr>
+      <th>2010-01-06</th>
+      <td> 47.55</td>
+      <td> 66.64</td>
+      <td> 61.02</td>
+    </tr>
+    <tr>
+      <th>2010-01-07</th>
+      <td> 47.53</td>
+      <td> 66.39</td>
+      <td> 60.83</td>
+    </tr>
+    <tr>
+      <th>2010-01-08</th>
+      <td> 47.64</td>
+      <td> 66.51</td>
+      <td> 60.59</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now lets get the volume trades</span>
+
+<span class="n">volume</span> <span class="o">=</span> <span class="n">pdweb</span><span class="o">.</span><span class="n">get_data_yahoo</span><span class="p">([</span><span class="s1">&#39;CVX&#39;</span><span class="p">,</span><span class="s1">&#39;XOM&#39;</span><span class="p">,</span><span class="s1">&#39;BP&#39;</span><span class="p">],</span> 
+                               <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> 
+                               <span class="n">end</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))[</span><span class="s1">&#39;Volume&#39;</span><span class="p">]</span>
+
+<span class="c1">#Show preview</span>
+<span class="n">volume</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>BP</th>
+      <th>CVX</th>
+      <th>XOM</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2010-01-04</th>
+      <td> 3956100</td>
+      <td> 10173800</td>
+      <td> 27809100</td>
+    </tr>
+    <tr>
+      <th>2010-01-05</th>
+      <td> 4109600</td>
+      <td> 10593700</td>
+      <td> 30174700</td>
+    </tr>
+    <tr>
+      <th>2010-01-06</th>
+      <td> 6227900</td>
+      <td> 11014600</td>
+      <td> 35044700</td>
+    </tr>
+    <tr>
+      <th>2010-01-07</th>
+      <td> 4431300</td>
+      <td>  9626900</td>
+      <td> 27192100</td>
+    </tr>
+    <tr>
+      <th>2010-01-08</th>
+      <td> 3786100</td>
+      <td>  5624300</td>
+      <td> 24891800</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Lets get the return</span>
+<span class="n">rets</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Get the correlation of the stocks</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">rets</span><span class="o">.</span><span class="n">corr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Lets see the prices over time to get a very rough idea of the correlation between the stock prices</span>
+<span class="n">prices</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1aa126a0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lec 22_20_1.png" src="../_images/Lec 22_20_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1">#As expected pretty strong correlations with eachother</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">rets</span><span class="o">.</span><span class="n">corr</span><span class="p">())</span>
+
+<span class="c1">#We&#39;ll learn much more about seaborn later!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x18b63a58&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lec 22_21_1.png" src="../_images/Lec 22_21_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can also check for unique values and their counts </span>
+
+<span class="c1">#For example</span>
+<span class="n">ser1</span> <span class="o">=</span> <span class="n">Series</span><span class="p">([</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span> <span class="p">,</span><span class="s1">&#39;w&#39;</span> <span class="p">,</span><span class="s1">&#39;w&#39;</span> <span class="p">,</span><span class="s1">&#39;x&#39;</span> <span class="p">,</span><span class="s1">&#39;x&#39;</span> <span class="p">,</span><span class="s1">&#39;y&#39;</span> <span class="p">,</span><span class="s1">&#39;a&#39;</span> <span class="p">,</span><span class="s1">&#39;z&#39;</span> <span class="p">])</span>
+
+<span class="c1">#Show</span>
+<span class="n">ser1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     w
+1     w
+2     x
+3     y
+4     z
+5     w
+6     w
+7     x
+8     x
+9     y
+10    a
+11    z
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Grab the unique values</span>
+<span class="n">ser1</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;w&#39;, &#39;x&#39;, &#39;y&#39;, &#39;z&#39;, &#39;a&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now get the count of the unique values</span>
+<span class="n">ser1</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>w    4
+x    3
+z    2
+y    2
+a    1
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Next we&#39;ll learn how to best deal with missing data!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "Jeshua-Romero-Guadarrama/IntroduccionCienciaDatosPython",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lec%2021.html" title="previous page">Rank and Sort</a>
+    <a class='right-next' id="next-link" href="Lec%2023.html" title="next page">Missing Data</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Por Jeshua Romero Guadarrama<br/>
+        
+            &copy; Derechos de autor 2021.<br/>
+          <div class="extra_footer">
+            <script src="https://kit.fontawesome.com/37a97f957d.js" crossorigin="anonymous"></script> <script>mermaid.init();</script> <div class="container-lg mt-3"> <div class="row"> <div class="col-xl-3"> <div class="footerImages"> <br> <br> <br> <br> <center><a href="https://www.jeshuanomics.com/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/Logo.png" height="130" alt="JeshuaNomics" style="float:center"></a></center> </div> </div> <div class="col-xl-6 d-flex"> <div class="container"> <center><a href="https://www.datascience.jeshuanomics.com/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/banner.png" alt="JeshuaNomics-blanco" style="background:white; padding:10px; height:66px;"></a></center> <center><div class="mb-3"><a href=https://www.datascience.jeshuanomics.com/"><span class="label"></span>JeshuaNomics - DataScience</a></div></center> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <ul> <li><a href="https://github.com/JeshuaNomics"><i class="fa fa-github" aria-hidden="true"></i><span class="label"></span> Git Hub  </a></li> <li><a href="https://www.facebook.com/JeshuaNomics/"><i class="fa fa-facebook" aria-hidden="true"></i><span class="label"></span> Facebook  </a></li> <li><a href="https://twitter.com/JeshuaNomics"><i class="fa fa-twitter" aria-hidden="true"></i><span class="label"></span> Twitter  </a></li> <li><a href="https://www.linkedin.com/in/jeshua-romero-guadarrama/"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin  </a></li> <li><a href="mailto:jeshuanomics@gmail.com?Subject=Ciencia%20de%20Datos"><i class="fa fa-envelope" aria-hidden="true"></i><span class="label"></span> Contáctanos </a></li> </ul> </div> <div class="col-6 d-flex" style="justify-content:center"> <ul> <li><a href="https://vk.com/jeshuanomics"><i class="fa fa-vk" aria-hidden="true"></i><span class="label"></span> Vkontakte  </a></li> <li><a href="https://jeshuanomics.tumblr.com/"><i class="fa fa-tumblr" aria-hidden="true"></i><span class="label"></span> Tumblr  </a></li> <li><a href="https://www.youtube.com/channel/UCY7f84mJGvMN7TF7XI4-Jgg?view_as=subscriber/"><i class="fa fa-youtube-play" aria-hidden="true"></i><span class="label"></span> YouTube  </a></li> <li><a href="https://www.instagram.com/JeshuaNomics/"><i class="fa fa-instagram" aria-hidden="true"></i><span class="label"></span> Instagram  </a></li> <li><a href="/CienciaDatosPython/content/recipes/boilerplate/people.html"><i class="fab fa-paypal" aria-hidden="true"></i><span class="label"></span> Donar </a></li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <br> <br> <br> <br> <center><a href="https://www.datascience.jeshuanomics.com/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/Python.png" height="60" alt="Python" style="float:center"></a></center> <center><a href="https://www.unam.mx/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/UNAM.png" height="66" alt="UNAM" style="background:rgb(3,25,59); float:center"></a></center> </div> </div> </div> <div class="row_footer my-3"> <center>Introducción al Análisis de Datos para Economistas en Python is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International</a> (CC BY 4.0) license.</center> </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

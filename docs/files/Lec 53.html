@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heatmaps and Clustered Matrices &#8212; Introducción al Análisis de Datos para Economistas en Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="prev" title="Regression Plots" href="Lec%2052.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introducción al Análisis de Datos para Economistas en Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Sobre_este_sitio.html">
+   Sobre este sitio
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analisis de datos con Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%207.html">
+   Creating Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%208.html">
+   Using arrays and scalars
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%209.html">
+   Indexing Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2010.html">
+   Array Transposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2011.html">
+   Universal Array Function
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2012.html">
+   Array Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2013.html">
+   Array Input and Output
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2014.html">
+   Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2015.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2016.html">
+   Index Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2017.html">
+   Reindexing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2018.html">
+   Drop Entry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2019.html">
+   Selecting Entries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2020.html">
+   Data Alignment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2021.html">
+   Rank and Sort
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2022.html">
+   Summary Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2023.html">
+   Missing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2024.html">
+   Index Hierarchy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2025.html">
+   Reading and Writing Text Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2026.html">
+   JSON with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2027.html">
+   HTML with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2028.html">
+   Excel with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2029.html">
+   Merge
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2030.html">
+   Merge on Index
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2031.html">
+   Concatenate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2032.html">
+   Combining DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2033.html">
+   Reshaping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2034.html">
+   Pivoting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2035.html">
+   Duplicates in DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2036.html">
+   Mapping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2037.html">
+   Replace
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2038.html">
+   Rename Index
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2039.html">
+   Binning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2040.html">
+   Outliers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2041.html">
+   Permutation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2042.html">
+   GroupBy on DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2043.html">
+   Groupby on Dict and Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2044.html">
+   Aggregation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2045.html">
+   Splitting, Applying and Combining
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2046.html">
+   Cross-Tabulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2047.html">
+   Installing Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2048.html">
+   Histograms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2049.html">
+   Kernel Density Estimation Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2050.html">
+   Combining Plot Styles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2051.html">
+   Box and Violin Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2052.html">
+   Regression Plots
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Heatmaps and Clustered Matrices
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://www.jeshuanomics.com/">JeshuaNomics</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/files/Lec 53.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Jeshua-Romero-Guadarrama/IntroduccionCienciaDatosPython/master?urlpath=tree/book/files/Lec 53.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/Jeshua-Romero-Guadarrama/IntroduccionCienciaDatosPython/blob/master/book/files/Lec 53.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Lanzamiento Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <center><img style="float: center; width:90%" src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/JeshuaNomics.png">
+</center><br>
+<script src="https://kit.fontawesome.com/37a97f957d.js" crossorigin="anonymous"></script>
+<center><a href="https://www.datascience.jeshuanomics.com/" target="blank" style="font-size:20px;">
+Introducción a la Ciencia de Datos para Economistas en Python
+</a></center>
+<center><a href="https://www.jeshuanomics.com/" target="blank" style="font-size:20px;">
+Publicado por Jeshua Romero Guadarrama en colaboración con JeshuaNomics
+</a></center>
+<center><a href="https://www.jeshuanomics.com/" target="blank">
+____________________________________________________________________________________________________
+</a></center><br>
+<center>
+<a href="https://github.com/JeshuaNomics"><i class="fa fa-github" aria-hidden="true"></i><span class="label"></span> GitHub  </a>
+<a href="https://www.facebook.com/JeshuaNomics/"><i class="fa fa-facebook" aria-hidden="true"></i><span class="label"></span> Facebook  </a>
+<a href="https://twitter.com/JeshuaNomics"><i class="fa fa-twitter" aria-hidden="true"></i><span class="label"></span> Twitter  </a>
+<a href="https://www.linkedin.com/in/jeshua-romero-guadarrama/"><i class="fa fa-linkedin" aria-hidden="true"></i><span class="label"></span> Linkedin  </a>
+<a href="https://vk.com/jeshuanomics"><i class="fa fa-vk" aria-hidden="true"></i><span class="label"></span> Vkontakte  </a>
+<a href="https://jeshuanomics.tumblr.com/"><i class="fa fa-tumblr" aria-hidden="true"></i><span class="label"></span> Tumblr  </a>
+<a href="https://www.youtube.com/channel/UCY7f84mJGvMN7TF7XI4-Jgg?view_as=subscriber/"><i class="fa fa-youtube-play" aria-hidden="true"></i><span class="label"></span> YouTube  </a>
+<a href="https://www.instagram.com/JeshuaNomics/"><i class="fa fa-instagram" aria-hidden="true"></i><span class="label"></span> Instagram  </a>
+<a href="https://www.datascience.jeshuanomics.com/"><i class="fa fa-check" aria-hidden="true"></i><span class="label"></span> DataScience </a>
+</center><br><br><div class="section" id="heatmaps-and-clustered-matrices">
+<h1>Heatmaps and Clustered Matrices<a class="headerlink" href="#heatmaps-and-clustered-matrices" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The normal imports</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Import the stats library from numpy</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># These are the plotting modules adn libraries we&#39;ll use:</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Command so that plots appear in the iPython Notebook</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Again seaborn comes with a great dataset to play and learn with</span>
+<span class="n">flight_dframe</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;flights&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Preview</span>
+<span class="n">flight_dframe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>passengers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td> 1949</td>
+      <td>  January</td>
+      <td> 112</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td> 1949</td>
+      <td> February</td>
+      <td> 118</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td> 1949</td>
+      <td>    March</td>
+      <td> 132</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td> 1949</td>
+      <td>    April</td>
+      <td> 129</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td> 1949</td>
+      <td>      May</td>
+      <td> 121</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s pivot this dataframe do its easier to manage</span>
+<span class="n">flight_dframe</span> <span class="o">=</span> <span class="n">flight_dframe</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s2">&quot;month&quot;</span><span class="p">,</span><span class="s2">&quot;year&quot;</span><span class="p">,</span><span class="s2">&quot;passengers&quot;</span><span class="p">)</span>
+
+<span class="c1">#Show</span>
+<span class="n">flight_dframe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>year</th>
+      <th>1949</th>
+      <th>1950</th>
+      <th>1951</th>
+      <th>1952</th>
+      <th>1953</th>
+      <th>1954</th>
+      <th>1955</th>
+      <th>1956</th>
+      <th>1957</th>
+      <th>1958</th>
+      <th>1959</th>
+      <th>1960</th>
+    </tr>
+    <tr>
+      <th>month</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>April</th>
+      <td> 129</td>
+      <td> 135</td>
+      <td> 163</td>
+      <td> 181</td>
+      <td> 235</td>
+      <td> 227</td>
+      <td> 269</td>
+      <td> 313</td>
+      <td> 348</td>
+      <td> 348</td>
+      <td> 396</td>
+      <td> 461</td>
+    </tr>
+    <tr>
+      <th>August</th>
+      <td> 148</td>
+      <td> 170</td>
+      <td> 199</td>
+      <td> 242</td>
+      <td> 272</td>
+      <td> 293</td>
+      <td> 347</td>
+      <td> 405</td>
+      <td> 467</td>
+      <td> 505</td>
+      <td> 559</td>
+      <td> 606</td>
+    </tr>
+    <tr>
+      <th>December</th>
+      <td> 118</td>
+      <td> 140</td>
+      <td> 166</td>
+      <td> 194</td>
+      <td> 201</td>
+      <td> 229</td>
+      <td> 278</td>
+      <td> 306</td>
+      <td> 336</td>
+      <td> 337</td>
+      <td> 405</td>
+      <td> 432</td>
+    </tr>
+    <tr>
+      <th>February</th>
+      <td> 118</td>
+      <td> 126</td>
+      <td> 150</td>
+      <td> 180</td>
+      <td> 196</td>
+      <td> 188</td>
+      <td> 233</td>
+      <td> 277</td>
+      <td> 301</td>
+      <td> 318</td>
+      <td> 342</td>
+      <td> 391</td>
+    </tr>
+    <tr>
+      <th>January</th>
+      <td> 112</td>
+      <td> 115</td>
+      <td> 145</td>
+      <td> 171</td>
+      <td> 196</td>
+      <td> 204</td>
+      <td> 242</td>
+      <td> 284</td>
+      <td> 315</td>
+      <td> 340</td>
+      <td> 360</td>
+      <td> 417</td>
+    </tr>
+    <tr>
+      <th>July</th>
+      <td> 148</td>
+      <td> 170</td>
+      <td> 199</td>
+      <td> 230</td>
+      <td> 264</td>
+      <td> 302</td>
+      <td> 364</td>
+      <td> 413</td>
+      <td> 465</td>
+      <td> 491</td>
+      <td> 548</td>
+      <td> 622</td>
+    </tr>
+    <tr>
+      <th>June</th>
+      <td> 135</td>
+      <td> 149</td>
+      <td> 178</td>
+      <td> 218</td>
+      <td> 243</td>
+      <td> 264</td>
+      <td> 315</td>
+      <td> 374</td>
+      <td> 422</td>
+      <td> 435</td>
+      <td> 472</td>
+      <td> 535</td>
+    </tr>
+    <tr>
+      <th>March</th>
+      <td> 132</td>
+      <td> 141</td>
+      <td> 178</td>
+      <td> 193</td>
+      <td> 236</td>
+      <td> 235</td>
+      <td> 267</td>
+      <td> 317</td>
+      <td> 356</td>
+      <td> 362</td>
+      <td> 406</td>
+      <td> 419</td>
+    </tr>
+    <tr>
+      <th>May</th>
+      <td> 121</td>
+      <td> 125</td>
+      <td> 172</td>
+      <td> 183</td>
+      <td> 229</td>
+      <td> 234</td>
+      <td> 270</td>
+      <td> 318</td>
+      <td> 355</td>
+      <td> 363</td>
+      <td> 420</td>
+      <td> 472</td>
+    </tr>
+    <tr>
+      <th>November</th>
+      <td> 104</td>
+      <td> 114</td>
+      <td> 146</td>
+      <td> 172</td>
+      <td> 180</td>
+      <td> 203</td>
+      <td> 237</td>
+      <td> 271</td>
+      <td> 305</td>
+      <td> 310</td>
+      <td> 362</td>
+      <td> 390</td>
+    </tr>
+    <tr>
+      <th>October</th>
+      <td> 119</td>
+      <td> 133</td>
+      <td> 162</td>
+      <td> 191</td>
+      <td> 211</td>
+      <td> 229</td>
+      <td> 274</td>
+      <td> 306</td>
+      <td> 347</td>
+      <td> 359</td>
+      <td> 407</td>
+      <td> 461</td>
+    </tr>
+    <tr>
+      <th>September</th>
+      <td> 136</td>
+      <td> 158</td>
+      <td> 184</td>
+      <td> 209</td>
+      <td> 237</td>
+      <td> 259</td>
+      <td> 312</td>
+      <td> 355</td>
+      <td> 404</td>
+      <td> 404</td>
+      <td> 463</td>
+      <td> 508</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This dataset is now in a clear format to be dispalyed as a heatmap</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">flight_dframe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x18ada518&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lec 53_6_1.png" src="../_images/Lec 53_6_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We also have the option to annotate each cell</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">flight_dframe</span><span class="p">,</span><span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1b51ae80&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lec 53_7_1.png" src="../_images/Lec 53_7_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># seaborn will automatically try to pick the best color scheme for your dataset, whether is be diverging or converging colormap</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can choose our own &#39;center&#39; for our colormap</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">flight_dframe</span><span class="p">,</span><span class="n">center</span><span class="o">=</span><span class="n">flight_dframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;January&#39;</span><span class="p">,</span><span class="mi">1955</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1bca9a90&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lec 53_9_1.png" src="../_images/Lec 53_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># heatmap() can be used on an axes for a subplot to create more informative figures</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">axis1</span><span class="p">,</span><span class="n">axis2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">yearly_flights</span> <span class="o">=</span> <span class="n">flight_dframe</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Since yearly_flights is a weird format, we&#39;ll have to grab the values we want with a Series, then put them in a dframe</span>
+
+<span class="n">years</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">yearly_flights</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">years</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">years</span><span class="p">)</span>
+
+<span class="n">flights</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">yearly_flights</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> 
+<span class="n">flights</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">flights</span><span class="p">)</span>
+
+<span class="c1"># Make the dframe and name columns</span>
+<span class="n">year_dframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">years</span><span class="p">,</span><span class="n">flights</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">year_dframe</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="s1">&#39;Flights&#39;</span><span class="p">]</span>
+
+
+
+<span class="c1"># Create the bar plot on top</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Flights&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">year_dframe</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axis1</span><span class="p">)</span>
+
+<span class="c1"># Create the heatmap on bottom</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">flight_dframe</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axis2</span><span class="p">,</span><span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x28bfcb38&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lec 53_10_1.png" src="../_images/Lec 53_10_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finally we&#39;ll learn about using a clustermap</span>
+
+<span class="c1"># Clustermap will reformat the heatmap so similar rows are next to each other</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">flight_dframe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.matrix.ClusterGrid at 0x20af8438&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lec 53_11_1.png" src="../_images/Lec 53_11_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s uncluster the columns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">flight_dframe</span><span class="p">,</span><span class="n">col_cluster</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.matrix.ClusterGrid at 0x220f1cc0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lec 53_12_1.png" src="../_images/Lec 53_12_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Since the number of flights increase every year, we should set a standard scale</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">flight_dframe</span><span class="p">,</span><span class="n">standard_scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># standardize by columns (year)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.matrix.ClusterGrid at 0x227967f0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lec 53_13_1.png" src="../_images/Lec 53_13_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Or scale the rows</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">flight_dframe</span><span class="p">,</span><span class="n">standard_scale</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.matrix.ClusterGrid at 0x2095c2e8&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lec 53_14_1.png" src="../_images/Lec 53_14_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finally we can also normalize the rows by their Z-score.</span>
+<span class="c1"># This subtracts the mean and devides by the STD of each column, then teh rows have amean of 0 and a variance of 1</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">flight_dframe</span><span class="p">,</span><span class="n">z_score</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.matrix.ClusterGrid at 0x20314160&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lec 53_15_1.png" src="../_images/Lec 53_15_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Above we can see which values are greater than the mean and which are below very clearly</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># CONGRATULATIONS!! We&#39;ve developed quite a toolbox to hammer out some great data anaysis projects!</span>
+
+<span class="c1"># Up next: Projects to apply what we&#39;ve learned to real datasets!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "Jeshua-Romero-Guadarrama/IntroduccionCienciaDatosPython",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lec%2052.html" title="previous page">Regression Plots</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Por Jeshua Romero Guadarrama<br/>
+        
+            &copy; Derechos de autor 2021.<br/>
+          <div class="extra_footer">
+            <script src="https://kit.fontawesome.com/37a97f957d.js" crossorigin="anonymous"></script> <script>mermaid.init();</script> <div class="container-lg mt-3"> <div class="row"> <div class="col-xl-3"> <div class="footerImages"> <br> <br> <br> <br> <center><a href="https://www.jeshuanomics.com/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/Logo.png" height="130" alt="JeshuaNomics" style="float:center"></a></center> </div> </div> <div class="col-xl-6 d-flex"> <div class="container"> <center><a href="https://www.datascience.jeshuanomics.com/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/banner.png" alt="JeshuaNomics-blanco" style="background:white; padding:10px; height:66px;"></a></center> <center><div class="mb-3"><a href=https://www.datascience.jeshuanomics.com/"><span class="label"></span>JeshuaNomics - DataScience</a></div></center> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <ul> <li><a href="https://github.com/JeshuaNomics"><i class="fa fa-github" aria-hidden="true"></i><span class="label"></span> Git Hub  </a></li> <li><a href="https://www.facebook.com/JeshuaNomics/"><i class="fa fa-facebook" aria-hidden="true"></i><span class="label"></span> Facebook  </a></li> <li><a href="https://twitter.com/JeshuaNomics"><i class="fa fa-twitter" aria-hidden="true"></i><span class="label"></span> Twitter  </a></li> <li><a href="https://www.linkedin.com/in/jeshua-romero-guadarrama/"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin  </a></li> <li><a href="mailto:jeshuanomics@gmail.com?Subject=Ciencia%20de%20Datos"><i class="fa fa-envelope" aria-hidden="true"></i><span class="label"></span> Contáctanos </a></li> </ul> </div> <div class="col-6 d-flex" style="justify-content:center"> <ul> <li><a href="https://vk.com/jeshuanomics"><i class="fa fa-vk" aria-hidden="true"></i><span class="label"></span> Vkontakte  </a></li> <li><a href="https://jeshuanomics.tumblr.com/"><i class="fa fa-tumblr" aria-hidden="true"></i><span class="label"></span> Tumblr  </a></li> <li><a href="https://www.youtube.com/channel/UCY7f84mJGvMN7TF7XI4-Jgg?view_as=subscriber/"><i class="fa fa-youtube-play" aria-hidden="true"></i><span class="label"></span> YouTube  </a></li> <li><a href="https://www.instagram.com/JeshuaNomics/"><i class="fa fa-instagram" aria-hidden="true"></i><span class="label"></span> Instagram  </a></li> <li><a href="/CienciaDatosPython/content/recipes/boilerplate/people.html"><i class="fab fa-paypal" aria-hidden="true"></i><span class="label"></span> Donar </a></li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <br> <br> <br> <br> <center><a href="https://www.datascience.jeshuanomics.com/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/Python.png" height="60" alt="Python" style="float:center"></a></center> <center><a href="https://www.unam.mx/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/UNAM.png" height="66" alt="UNAM" style="background:rgb(3,25,59); float:center"></a></center> </div> </div> </div> <div class="row_footer my-3"> <center>Introducción al Análisis de Datos para Economistas en Python is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International</a> (CC BY 4.0) license.</center> </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,103 @@
+#######################################################################################################################################
+# Configuración del libro
+title                         : Introducción al Análisis de Datos para Economistas en Python
+author                        : Jeshua Romero Guadarrama
+logo                          : 'logo.png'
+email                         : jeshuanomics@gmail.com
+description: >-
+    Este libro presenta un conjunto de conferencias sobre programación Python para economía cuantitativa, diseñado y escrito por **Jeshua Romero Guadarrama** y **JeshuaNomics**.
+
+only_build_toc_files          : true
+
+execute:
+  execute_notebooks           : cache
+
+latex:
+  latex_documents:
+    targetname                : book.tex
+
+html:
+  favicon                     : 'logo.png'
+  home_page_in_navbar         : true
+  navbar_number_sections      : true
+  use_edit_page_button        : false
+  use_repository_button       : false
+  use_issue_button            : true
+  extra_navbar                : Powered by <a href="https://www.jeshuanomics.com/">JeshuaNomics</a>
+  extra_footer                :
+    <script src="https://kit.fontawesome.com/37a97f957d.js" crossorigin="anonymous"></script>
+    <script>mermaid.init();</script>
+    <div class="container-lg mt-3">
+      <div class="row">
+        <div class="col-xl-3">
+            <div class="footerImages">
+              <br>
+              <br>
+              <br>
+              <br>
+              <center><a href="https://www.jeshuanomics.com/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/Logo.png" height="130" alt="JeshuaNomics" style="float:center"></a></center>
+            </div>
+        </div>
+        <div class="col-xl-6 d-flex">
+          <div class="container">
+            <center><a href="https://www.datascience.jeshuanomics.com/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/banner.png" alt="JeshuaNomics-blanco" style="background:white; padding:10px; height:66px;"></a></center>
+            <center><div class="mb-3"><a href=https://www.datascience.jeshuanomics.com/"><span class="label"></span>JeshuaNomics - DataScience</a></div></center>
+            <div class="row">
+              <div class="col-6 d-flex" style="justify-content:center">
+                <ul>
+                  <li><a href="https://github.com/JeshuaNomics"><i class="fa fa-github" aria-hidden="true"></i><span class="label"></span> Git Hub  </a></li>
+                  <li><a href="https://www.facebook.com/JeshuaNomics/"><i class="fa fa-facebook" aria-hidden="true"></i><span class="label"></span> Facebook  </a></li>
+                  <li><a href="https://twitter.com/JeshuaNomics"><i class="fa fa-twitter" aria-hidden="true"></i><span class="label"></span> Twitter  </a></li>
+                  <li><a href="https://www.linkedin.com/in/jeshua-romero-guadarrama/"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin  </a></li>
+                  <li><a href="mailto:jeshuanomics@gmail.com?Subject=Ciencia%20de%20Datos"><i class="fa fa-envelope" aria-hidden="true"></i><span class="label"></span> Contáctanos </a></li>
+                </ul>
+              </div>
+              <div class="col-6 d-flex" style="justify-content:center">
+                <ul>
+                  <li><a href="https://vk.com/jeshuanomics"><i class="fa fa-vk" aria-hidden="true"></i><span class="label"></span> Vkontakte  </a></li>
+                  <li><a href="https://jeshuanomics.tumblr.com/"><i class="fa fa-tumblr" aria-hidden="true"></i><span class="label"></span> Tumblr  </a></li>
+                  <li><a href="https://www.youtube.com/channel/UCY7f84mJGvMN7TF7XI4-Jgg?view_as=subscriber/"><i class="fa fa-youtube-play" aria-hidden="true"></i><span class="label"></span> YouTube  </a></li>
+                  <li><a href="https://www.instagram.com/JeshuaNomics/"><i class="fa fa-instagram" aria-hidden="true"></i><span class="label"></span> Instagram  </a></li>
+                  <li><a href="/CienciaDatosPython/content/recipes/boilerplate/people.html"><i class="fab fa-paypal" aria-hidden="true"></i><span class="label"></span> Donar </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <br>
+          <br>
+          <br>
+          <br>
+          <center><a href="https://www.datascience.jeshuanomics.com/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/Python.png" height="60" alt="Python" style="float:center"></a></center>       
+          <center><a href="https://www.unam.mx/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/UNAM.png" height="66" alt="UNAM" style="background:rgb(3,25,59); float:center"></a></center>
+        </div>
+      </div>
+    </div>
+    <div class="row_footer my-3">  
+      <center>Introducción al Análisis de Datos para Economistas en Python is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International</a> (CC BY 4.0) license.</center>      
+    </div>
+  google_analytics_id         :
+  comments:
+    hypothesis                : true
+
+
+repository:
+  url                         : https://github.com/Jeshua-Romero-Guadarrama/IntroduccionCienciaDatosPython
+  branch                      : master
+  path_to_book                : book
+
+
+launch_buttons:
+  notebook_interface          : classic
+  binderhub_url               : 'https://mybinder.org'
+  colab_url                   : 'https://colab.research.google.com'
+  thebe                       : true
+
+sphinx:
+  config:
+    language                  : es
+    html_static_path          : ['_static']
+    
+parse:
+  myst_enable_extensions      : ['dollarmath']

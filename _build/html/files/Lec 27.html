@@ -1,0 +1,1411 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML with Python &#8212; Introducción al Análisis de Datos para Economistas en Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Excel with Python" href="Lec%2028.html" />
+    <link rel="prev" title="JSON with Python" href="Lec%2026.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introducción al Análisis de Datos para Economistas en Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Sobre_este_sitio.html">
+   Sobre este sitio
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analisis de datos con Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%207.html">
+   Creating Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%208.html">
+   Using arrays and scalars
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%209.html">
+   Indexing Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2010.html">
+   Array Transposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2011.html">
+   Universal Array Function
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2012.html">
+   Array Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2013.html">
+   Array Input and Output
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2014.html">
+   Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2015.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2016.html">
+   Index Objects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2017.html">
+   Reindexing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2018.html">
+   Drop Entry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2019.html">
+   Selecting Entries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2020.html">
+   Data Alignment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2021.html">
+   Rank and Sort
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2022.html">
+   Summary Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2023.html">
+   Missing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2024.html">
+   Index Hierarchy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2025.html">
+   Reading and Writing Text Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2026.html">
+   JSON with Python
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   HTML with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2028.html">
+   Excel with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2029.html">
+   Merge
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2030.html">
+   Merge on Index
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2031.html">
+   Concatenate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2032.html">
+   Combining DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2033.html">
+   Reshaping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2034.html">
+   Pivoting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2035.html">
+   Duplicates in DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2036.html">
+   Mapping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2037.html">
+   Replace
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2038.html">
+   Rename Index
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2039.html">
+   Binning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2040.html">
+   Outliers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2041.html">
+   Permutation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2042.html">
+   GroupBy on DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2043.html">
+   Groupby on Dict and Series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2044.html">
+   Aggregation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2045.html">
+   Splitting, Applying and Combining
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2046.html">
+   Cross-Tabulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2047.html">
+   Installing Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2048.html">
+   Histograms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2049.html">
+   Kernel Density Estimation Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2050.html">
+   Combining Plot Styles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2051.html">
+   Box and Violin Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2052.html">
+   Regression Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lec%2053.html">
+   Heatmaps and Clustered Matrices
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://www.jeshuanomics.com/">JeshuaNomics</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/files/Lec 27.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Jeshua-Romero-Guadarrama/IntroduccionCienciaDatosPython/master?urlpath=tree/book/files/Lec 27.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/Jeshua-Romero-Guadarrama/IntroduccionCienciaDatosPython/blob/master/book/files/Lec 27.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Lanzamiento Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <center><img style="float: center; width:90%" src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/JeshuaNomics.png">
+</center><br>
+<script src="https://kit.fontawesome.com/37a97f957d.js" crossorigin="anonymous"></script>
+<center><a href="https://www.datascience.jeshuanomics.com/" target="blank" style="font-size:20px;">
+Introducción a la Ciencia de Datos para Economistas en Python
+</a></center>
+<center><a href="https://www.jeshuanomics.com/" target="blank" style="font-size:20px;">
+Publicado por Jeshua Romero Guadarrama en colaboración con JeshuaNomics
+</a></center>
+<center><a href="https://www.jeshuanomics.com/" target="blank">
+____________________________________________________________________________________________________
+</a></center><br>
+<center>
+<a href="https://github.com/JeshuaNomics"><i class="fa fa-github" aria-hidden="true"></i><span class="label"></span> GitHub  </a>
+<a href="https://www.facebook.com/JeshuaNomics/"><i class="fa fa-facebook" aria-hidden="true"></i><span class="label"></span> Facebook  </a>
+<a href="https://twitter.com/JeshuaNomics"><i class="fa fa-twitter" aria-hidden="true"></i><span class="label"></span> Twitter  </a>
+<a href="https://www.linkedin.com/in/jeshua-romero-guadarrama/"><i class="fa fa-linkedin" aria-hidden="true"></i><span class="label"></span> Linkedin  </a>
+<a href="https://vk.com/jeshuanomics"><i class="fa fa-vk" aria-hidden="true"></i><span class="label"></span> Vkontakte  </a>
+<a href="https://jeshuanomics.tumblr.com/"><i class="fa fa-tumblr" aria-hidden="true"></i><span class="label"></span> Tumblr  </a>
+<a href="https://www.youtube.com/channel/UCY7f84mJGvMN7TF7XI4-Jgg?view_as=subscriber/"><i class="fa fa-youtube-play" aria-hidden="true"></i><span class="label"></span> YouTube  </a>
+<a href="https://www.instagram.com/JeshuaNomics/"><i class="fa fa-instagram" aria-hidden="true"></i><span class="label"></span> Instagram  </a>
+<a href="https://www.datascience.jeshuanomics.com/"><i class="fa fa-check" aria-hidden="true"></i><span class="label"></span> DataScience </a>
+</center><br><br><div class="section" id="html-with-python">
+<h1>HTML with Python<a class="headerlink" href="#html-with-python" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can import data using lxml</span>
+
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_html</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">Series</span><span class="p">,</span> <span class="n">DataFrame</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Lets grab a url for list of failed banks</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.fdic.gov/bank/individual/failed/banklist.html&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">IMPORTANT NOTE: NEED TO HAVE beautiful-soup INSTALLED as well as html5lib !!!!</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nIMPORTANT NOTE: NEED TO HAVE beautiful-soup INSTALLED as well as html5lib !!!!\n\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab data from html and put it intop a list of DataFrame objects!</span>
+<span class="n">dframe_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Grab the first list item from the data base and set as a DataFrame</span>
+<span class="n">dframe</span> <span class="o">=</span> <span class="n">dframe_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Show</span>
+<span class="n">dframe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Bank Name</th>
+      <th>City</th>
+      <th>ST</th>
+      <th>CERT</th>
+      <th>Acquiring Institution</th>
+      <th>Closing Date</th>
+      <th>Updated Date</th>
+      <th>Loss Share Type</th>
+      <th>Agreement Terminated</th>
+      <th>Termination Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0  </th>
+      <td>                 Capitol City Bank &amp; Trust Company</td>
+      <td>         Atlanta</td>
+      <td> GA</td>
+      <td> 33938</td>
+      <td>        First-Citizens Bank &amp; Trust Company</td>
+      <td>  February 13, 2015</td>
+      <td>  February 19, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>1  </th>
+      <td>                           Highland Community Bank</td>
+      <td>         Chicago</td>
+      <td> IL</td>
+      <td> 20290</td>
+      <td>                  United Fidelity Bank, fsb</td>
+      <td>   January 23, 2015</td>
+      <td>  February 11, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>2  </th>
+      <td>                  First National Bank of Crestview</td>
+      <td>       Crestview</td>
+      <td> FL</td>
+      <td> 17557</td>
+      <td>                             First NBC Bank</td>
+      <td>   January 16, 2015</td>
+      <td>  February 11, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>3  </th>
+      <td>                                Northern Star Bank</td>
+      <td>         Mankato</td>
+      <td> MN</td>
+      <td> 34983</td>
+      <td>                                  BankVista</td>
+      <td>  December 19, 2014</td>
+      <td>   February 4, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>4  </th>
+      <td>            Frontier Bank, FSB D/B/A El Paseo Bank</td>
+      <td>     Palm Desert</td>
+      <td> CA</td>
+      <td> 34738</td>
+      <td>          Bank of Southern California, N.A.</td>
+      <td>   November 7, 2014</td>
+      <td>   February 4, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>5  </th>
+      <td>             The National Republic Bank of Chicago</td>
+      <td>         Chicago</td>
+      <td> IL</td>
+      <td>   916</td>
+      <td>                        State Bank of Texas</td>
+      <td>   October 24, 2014</td>
+      <td>   February 4, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>6  </th>
+      <td>                                    NBRS Financial</td>
+      <td>      Rising Sun</td>
+      <td> MD</td>
+      <td>  4862</td>
+      <td>                                Howard Bank</td>
+      <td>   October 17, 2014</td>
+      <td>   February 4, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>7  </th>
+      <td>                             GreenChoice Bank, fsb</td>
+      <td>         Chicago</td>
+      <td> IL</td>
+      <td> 28462</td>
+      <td>                       Providence Bank, LLC</td>
+      <td>      July 25, 2014</td>
+      <td>    January 5, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>8  </th>
+      <td>                          Eastside Commercial Bank</td>
+      <td>         Conyers</td>
+      <td> GA</td>
+      <td> 58125</td>
+      <td>                  Community &amp; Southern Bank</td>
+      <td>      July 18, 2014</td>
+      <td>    January 5, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>9  </th>
+      <td>                            The Freedom State Bank</td>
+      <td>         Freedom</td>
+      <td> OK</td>
+      <td> 12483</td>
+      <td>            Alva State Bank &amp; Trust Company</td>
+      <td>      June 27, 2014</td>
+      <td>      July 18, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>10 </th>
+      <td>                                       Valley Bank</td>
+      <td> Fort Lauderdale</td>
+      <td> FL</td>
+      <td> 21793</td>
+      <td>        Landmark Bank, National Association</td>
+      <td>      June 20, 2014</td>
+      <td>      July 28, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>11 </th>
+      <td>                                       Valley Bank</td>
+      <td>          Moline</td>
+      <td> IL</td>
+      <td> 10450</td>
+      <td>                        Great Southern Bank</td>
+      <td>      June 20, 2014</td>
+      <td>      July 28, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>12 </th>
+      <td>                       Slavie Federal Savings Bank</td>
+      <td>         Bel Air</td>
+      <td> MD</td>
+      <td> 32368</td>
+      <td>                              Bay Bank, FSB</td>
+      <td>       May 30, 2014</td>
+      <td>      July 18, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>13 </th>
+      <td>                             Columbia Savings Bank</td>
+      <td>      Cincinnati</td>
+      <td> OH</td>
+      <td> 32284</td>
+      <td>                  United Fidelity Bank, fsb</td>
+      <td>       May 23, 2014</td>
+      <td>      July 18, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>14 </th>
+      <td>                      AztecAmerica Bank En Espanol</td>
+      <td>          Berwyn</td>
+      <td> IL</td>
+      <td> 57866</td>
+      <td>                   Republic Bank of Chicago</td>
+      <td>       May 16, 2014</td>
+      <td>      July 18, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>15 </th>
+      <td>                             Allendale County Bank</td>
+      <td>         Fairfax</td>
+      <td> SC</td>
+      <td> 15062</td>
+      <td>                        Palmetto State Bank</td>
+      <td>     April 25, 2014</td>
+      <td>      July 18, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>16 </th>
+      <td>                                Vantage Point Bank</td>
+      <td>         Horsham</td>
+      <td> PA</td>
+      <td> 58531</td>
+      <td>                          First Choice Bank</td>
+      <td>  February 28, 2014</td>
+      <td>     April 11, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>17 </th>
+      <td>             Millennium Bank, National Association</td>
+      <td>        Sterling</td>
+      <td> VA</td>
+      <td> 35096</td>
+      <td>                       WashingtonFirst Bank</td>
+      <td>  February 28, 2014</td>
+      <td>     April 11, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>18 </th>
+      <td>                                      Syringa Bank</td>
+      <td>           Boise</td>
+      <td> ID</td>
+      <td> 34296</td>
+      <td>                               Sunwest Bank</td>
+      <td>   January 31, 2014</td>
+      <td>  February 19, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>19 </th>
+      <td>                                 The Bank of Union</td>
+      <td>         El Reno</td>
+      <td> OK</td>
+      <td> 17967</td>
+      <td>                                  BancFirst</td>
+      <td>   January 24, 2014</td>
+      <td>  February 19, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>20 </th>
+      <td>                              DuPage National Bank</td>
+      <td>    West Chicago</td>
+      <td> IL</td>
+      <td>  5732</td>
+      <td>                   Republic Bank of Chicago</td>
+      <td>   January 17, 2014</td>
+      <td>  February 19, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>21 </th>
+      <td>        Texas Community Bank, National Association</td>
+      <td>   The Woodlands</td>
+      <td> TX</td>
+      <td> 57431</td>
+      <td>                  Spirit of Texas Bank, SSB</td>
+      <td>  December 13, 2013</td>
+      <td>  December 29, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>22 </th>
+      <td>                            Bank of Jackson County</td>
+      <td>      Graceville</td>
+      <td> FL</td>
+      <td> 14794</td>
+      <td>              First Federal Bank of Florida</td>
+      <td>   October 30, 2013</td>
+      <td>  November 05, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>23 </th>
+      <td> First National Bank also operating as The  Nat...</td>
+      <td>        Edinburg</td>
+      <td> TX</td>
+      <td> 14318</td>
+      <td>                         PlainsCapital Bank</td>
+      <td> September 13, 2013</td>
+      <td> September 12, 2014</td>
+      <td> SFR/NSF</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>24 </th>
+      <td>                              The Community's Bank</td>
+      <td>      Bridgeport</td>
+      <td> CT</td>
+      <td> 57041</td>
+      <td>                                No Acquirer</td>
+      <td> September 13, 2013</td>
+      <td>  December 20, 2013</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>25 </th>
+      <td>                           Sunrise Bank of Arizona</td>
+      <td>         Phoenix</td>
+      <td> AZ</td>
+      <td> 34707</td>
+      <td>  First Fidelity Bank, National Association</td>
+      <td>    August 23, 2013</td>
+      <td> September 12, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>26 </th>
+      <td>                              Community South Bank</td>
+      <td>         Parsons</td>
+      <td> TN</td>
+      <td> 19849</td>
+      <td>                            CB&amp;S Bank, Inc.</td>
+      <td>    August 23, 2013</td>
+      <td> September 12, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>27 </th>
+      <td>                                    Bank of Wausau</td>
+      <td>          Wausau</td>
+      <td> WI</td>
+      <td> 35016</td>
+      <td>                      Nicolet National Bank</td>
+      <td>     August 9, 2013</td>
+      <td>   October 24, 2013</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>28 </th>
+      <td> First Community Bank of Southwest Florida (als...</td>
+      <td>      Fort Myers</td>
+      <td> FL</td>
+      <td> 34943</td>
+      <td>                                    C1 Bank</td>
+      <td>     August 2, 2013</td>
+      <td>     August 4, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>29 </th>
+      <td>                            Mountain National Bank</td>
+      <td>     Sevierville</td>
+      <td> TN</td>
+      <td> 34789</td>
+      <td> First Tennessee Bank, National Association</td>
+      <td>       June 7, 2013</td>
+      <td>      June 20, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>507</th>
+      <td>                                 ANB Financial, NA</td>
+      <td>     Bentonville</td>
+      <td> AR</td>
+      <td> 33901</td>
+      <td>             Pulaski Bank and Trust Company</td>
+      <td>        May 9, 2008</td>
+      <td>    August 28, 2012</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>508</th>
+      <td>                                         Hume Bank</td>
+      <td>            Hume</td>
+      <td> MO</td>
+      <td>  1971</td>
+      <td>                              Security Bank</td>
+      <td>      March 7, 2008</td>
+      <td>    August 28, 2012</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>509</th>
+      <td>                            Douglass National Bank</td>
+      <td>     Kansas City</td>
+      <td> MO</td>
+      <td> 24660</td>
+      <td>             Liberty Bank and Trust Company</td>
+      <td>   January 25, 2008</td>
+      <td>   October 26, 2012</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>510</th>
+      <td>                                 Miami Valley Bank</td>
+      <td>        Lakeview</td>
+      <td> OH</td>
+      <td> 16848</td>
+      <td>               The Citizens Banking Company</td>
+      <td>    October 4, 2007</td>
+      <td>    August 28, 2012</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>511</th>
+      <td>                                           NetBank</td>
+      <td>      Alpharetta</td>
+      <td> GA</td>
+      <td> 32575</td>
+      <td>                                 ING DIRECT</td>
+      <td> September 28, 2007</td>
+      <td>    August 28, 2012</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>512</th>
+      <td>                         Metropolitan Savings Bank</td>
+      <td>      Pittsburgh</td>
+      <td> PA</td>
+      <td> 35353</td>
+      <td>        Allegheny Valley Bank of Pittsburgh</td>
+      <td>   February 2, 2007</td>
+      <td>   October 27, 2010</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>513</th>
+      <td>                                   Bank of Ephraim</td>
+      <td>         Ephraim</td>
+      <td> UT</td>
+      <td>  1249</td>
+      <td>                              Far West Bank</td>
+      <td>      June 25, 2004</td>
+      <td>      April 9, 2008</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>514</th>
+      <td>                                     Reliance Bank</td>
+      <td>    White Plains</td>
+      <td> NY</td>
+      <td> 26778</td>
+      <td>                           Union State Bank</td>
+      <td>     March 19, 2004</td>
+      <td>      April 9, 2008</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>515</th>
+      <td>             Guaranty National Bank of Tallahassee</td>
+      <td>     Tallahassee</td>
+      <td> FL</td>
+      <td> 26838</td>
+      <td>                    Hancock Bank of Florida</td>
+      <td>     March 12, 2004</td>
+      <td>       June 5, 2012</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>516</th>
+      <td>                               Dollar Savings Bank</td>
+      <td>          Newark</td>
+      <td> NJ</td>
+      <td> 31330</td>
+      <td>                                No Acquirer</td>
+      <td>  February 14, 2004</td>
+      <td>      April 9, 2008</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>517</th>
+      <td>                              Pulaski Savings Bank</td>
+      <td>    Philadelphia</td>
+      <td> PA</td>
+      <td> 27203</td>
+      <td>                             Earthstar Bank</td>
+      <td>  November 14, 2003</td>
+      <td>      July 22, 2005</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>518</th>
+      <td>             First National Bank of Blanchardville</td>
+      <td>  Blanchardville</td>
+      <td> WI</td>
+      <td> 11639</td>
+      <td>                              The Park Bank</td>
+      <td>        May 9, 2003</td>
+      <td>       June 5, 2012</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>519</th>
+      <td>                             Southern Pacific Bank</td>
+      <td>        Torrance</td>
+      <td> CA</td>
+      <td> 27094</td>
+      <td>                                  Beal Bank</td>
+      <td>   February 7, 2003</td>
+      <td>   October 20, 2008</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>520</th>
+      <td>                       Farmers Bank of Cheneyville</td>
+      <td>     Cheneyville</td>
+      <td> LA</td>
+      <td> 16445</td>
+      <td>                  Sabine State Bank &amp; Trust</td>
+      <td>  December 17, 2002</td>
+      <td>   October 20, 2004</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>521</th>
+      <td>                                     Bank of Alamo</td>
+      <td>           Alamo</td>
+      <td> TN</td>
+      <td>  9961</td>
+      <td>                                No Acquirer</td>
+      <td>   November 8, 2002</td>
+      <td>     March 18, 2005</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>522</th>
+      <td>              AmTrade International BankEn Espanol</td>
+      <td>         Atlanta</td>
+      <td> GA</td>
+      <td> 33784</td>
+      <td>                                No Acquirer</td>
+      <td> September 30, 2002</td>
+      <td> September 11, 2006</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>523</th>
+      <td>                    Universal Federal Savings Bank</td>
+      <td>         Chicago</td>
+      <td> IL</td>
+      <td> 29355</td>
+      <td>                     Chicago Community Bank</td>
+      <td>      June 27, 2002</td>
+      <td>      April 9, 2008</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>524</th>
+      <td>                      Connecticut Bank of Commerce</td>
+      <td>        Stamford</td>
+      <td> CT</td>
+      <td> 19183</td>
+      <td>                         Hudson United Bank</td>
+      <td>      June 26, 2002</td>
+      <td>  February 14, 2012</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>525</th>
+      <td>                                  New Century Bank</td>
+      <td> Shelby Township</td>
+      <td> MI</td>
+      <td> 34979</td>
+      <td>                                No Acquirer</td>
+      <td>     March 28, 2002</td>
+      <td>     March 18, 2005</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>526</th>
+      <td>                             Net 1st National Bank</td>
+      <td>      Boca Raton</td>
+      <td> FL</td>
+      <td> 26652</td>
+      <td>                             Bank Leumi USA</td>
+      <td>      March 1, 2002</td>
+      <td>      April 9, 2008</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>527</th>
+      <td>                                      NextBank, NA</td>
+      <td>         Phoenix</td>
+      <td> AZ</td>
+      <td> 22314</td>
+      <td>                                No Acquirer</td>
+      <td>   February 7, 2002</td>
+      <td>   February 5, 2015</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>528</th>
+      <td>                          Oakwood Deposit Bank Co.</td>
+      <td>         Oakwood</td>
+      <td> OH</td>
+      <td>  8966</td>
+      <td>             The State Bank &amp; Trust Company</td>
+      <td>   February 1, 2002</td>
+      <td>   October 25, 2012</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>529</th>
+      <td>                             Bank of Sierra Blanca</td>
+      <td>   Sierra Blanca</td>
+      <td> TX</td>
+      <td> 22002</td>
+      <td>           The Security State Bank of Pecos</td>
+      <td>   January 18, 2002</td>
+      <td>   November 6, 2003</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>530</th>
+      <td>                       Hamilton Bank, NAEn Espanol</td>
+      <td>           Miami</td>
+      <td> FL</td>
+      <td> 24382</td>
+      <td>           Israel Discount Bank of New York</td>
+      <td>   January 11, 2002</td>
+      <td>       June 5, 2012</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>531</th>
+      <td>                            Sinclair National Bank</td>
+      <td>        Gravette</td>
+      <td> AR</td>
+      <td> 34248</td>
+      <td>                         Delta Trust &amp; Bank</td>
+      <td>  September 7, 2001</td>
+      <td>  February 10, 2004</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>532</th>
+      <td>                                Superior Bank, FSB</td>
+      <td>        Hinsdale</td>
+      <td> IL</td>
+      <td> 32646</td>
+      <td>                      Superior Federal, FSB</td>
+      <td>      July 27, 2001</td>
+      <td>    August 19, 2014</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>533</th>
+      <td>                               Malta National Bank</td>
+      <td>           Malta</td>
+      <td> OH</td>
+      <td>  6629</td>
+      <td>                          North Valley Bank</td>
+      <td>        May 3, 2001</td>
+      <td>  November 18, 2002</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>534</th>
+      <td>                   First Alliance Bank &amp; Trust Co.</td>
+      <td>      Manchester</td>
+      <td> NH</td>
+      <td> 34264</td>
+      <td>        Southern New Hampshire Bank &amp; Trust</td>
+      <td>   February 2, 2001</td>
+      <td>  February 18, 2003</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>535</th>
+      <td>                 National State Bank of Metropolis</td>
+      <td>      Metropolis</td>
+      <td> IL</td>
+      <td>  3815</td>
+      <td>                    Banterra Bank of Marion</td>
+      <td>  December 14, 2000</td>
+      <td>     March 17, 2005</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+    <tr>
+      <th>536</th>
+      <td>                                  Bank of Honolulu</td>
+      <td>        Honolulu</td>
+      <td> HI</td>
+      <td> 21029</td>
+      <td>                         Bank of the Orient</td>
+      <td>   October 13, 2000</td>
+      <td>     March 17, 2005</td>
+      <td>    none</td>
+      <td> NaN</td>
+      <td> NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>537 rows × 10 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dframe</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([u&#39;Bank Name&#39;, u&#39;City&#39;, u&#39;ST&#39;, u&#39;CERT&#39;, u&#39;Acquiring Institution&#39;,
+       u&#39;Closing Date&#39;, u&#39;Updated Date&#39;, u&#39;Loss Share Type&#39;,
+       u&#39;Agreement Terminated&#39;, u&#39;Termination Date&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Next we&#39;ll learn about working with Excel files!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "Jeshua-Romero-Guadarrama/IntroduccionCienciaDatosPython",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lec%2026.html" title="previous page">JSON with Python</a>
+    <a class='right-next' id="next-link" href="Lec%2028.html" title="next page">Excel with Python</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Por Jeshua Romero Guadarrama<br/>
+        
+            &copy; Derechos de autor 2021.<br/>
+          <div class="extra_footer">
+            <script src="https://kit.fontawesome.com/37a97f957d.js" crossorigin="anonymous"></script> <script>mermaid.init();</script> <div class="container-lg mt-3"> <div class="row"> <div class="col-xl-3"> <div class="footerImages"> <br> <br> <br> <br> <center><a href="https://www.jeshuanomics.com/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/Logo.png" height="130" alt="JeshuaNomics" style="float:center"></a></center> </div> </div> <div class="col-xl-6 d-flex"> <div class="container"> <center><a href="https://www.datascience.jeshuanomics.com/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/banner.png" alt="JeshuaNomics-blanco" style="background:white; padding:10px; height:66px;"></a></center> <center><div class="mb-3"><a href=https://www.datascience.jeshuanomics.com/"><span class="label"></span>JeshuaNomics - DataScience</a></div></center> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <ul> <li><a href="https://github.com/JeshuaNomics"><i class="fa fa-github" aria-hidden="true"></i><span class="label"></span> Git Hub  </a></li> <li><a href="https://www.facebook.com/JeshuaNomics/"><i class="fa fa-facebook" aria-hidden="true"></i><span class="label"></span> Facebook  </a></li> <li><a href="https://twitter.com/JeshuaNomics"><i class="fa fa-twitter" aria-hidden="true"></i><span class="label"></span> Twitter  </a></li> <li><a href="https://www.linkedin.com/in/jeshua-romero-guadarrama/"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin  </a></li> <li><a href="mailto:jeshuanomics@gmail.com?Subject=Ciencia%20de%20Datos"><i class="fa fa-envelope" aria-hidden="true"></i><span class="label"></span> Contáctanos </a></li> </ul> </div> <div class="col-6 d-flex" style="justify-content:center"> <ul> <li><a href="https://vk.com/jeshuanomics"><i class="fa fa-vk" aria-hidden="true"></i><span class="label"></span> Vkontakte  </a></li> <li><a href="https://jeshuanomics.tumblr.com/"><i class="fa fa-tumblr" aria-hidden="true"></i><span class="label"></span> Tumblr  </a></li> <li><a href="https://www.youtube.com/channel/UCY7f84mJGvMN7TF7XI4-Jgg?view_as=subscriber/"><i class="fa fa-youtube-play" aria-hidden="true"></i><span class="label"></span> YouTube  </a></li> <li><a href="https://www.instagram.com/JeshuaNomics/"><i class="fa fa-instagram" aria-hidden="true"></i><span class="label"></span> Instagram  </a></li> <li><a href="/CienciaDatosPython/content/recipes/boilerplate/people.html"><i class="fab fa-paypal" aria-hidden="true"></i><span class="label"></span> Donar </a></li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <br> <br> <br> <br> <center><a href="https://www.datascience.jeshuanomics.com/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/Python.png" height="60" alt="Python" style="float:center"></a></center> <center><a href="https://www.unam.mx/"><img src="https://raw.githubusercontent.com/Jeshua-Romero-Guadarrama/CienciaDatosPython/main/images/UNAM.png" height="66" alt="UNAM" style="background:rgb(3,25,59); float:center"></a></center> </div> </div> </div> <div class="row_footer my-3"> <center>Introducción al Análisis de Datos para Economistas en Python is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International</a> (CC BY 4.0) license.</center> </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

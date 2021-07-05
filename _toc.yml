@@ -1,0 +1,58 @@
+format: jb-book
+root: files/Sobre_este_sitio
+parts:
+- caption: "Analisis de datos con Python"
+  chapters:
+  - file: files/Lec 1
+  - file: files/Lec 2
+  - file: files/Lec 3
+  - file: files/Lec 4
+  - file: files/Lec 5
+  - file: files/Lec 6
+  - file: files/Lec 7
+  - file: files/Lec 8
+  - file: files/Lec 9
+  - file: files/Lec 10
+  - file: files/Lec 11
+  - file: files/Lec 12
+  - file: files/Lec 13
+  - file: files/Lec 14
+  - file: files/Lec 15
+  - file: files/Lec 16
+  - file: files/Lec 17
+  - file: files/Lec 18
+  - file: files/Lec 19
+  - file: files/Lec 20
+  - file: files/Lec 21
+  - file: files/Lec 22
+  - file: files/Lec 23
+  - file: files/Lec 24
+  - file: files/Lec 25
+  - file: files/Lec 26
+  - file: files/Lec 27
+  - file: files/Lec 28
+  - file: files/Lec 29
+  - file: files/Lec 30
+  - file: files/Lec 31
+  - file: files/Lec 32
+  - file: files/Lec 33
+  - file: files/Lec 34
+  - file: files/Lec 35
+  - file: files/Lec 36
+  - file: files/Lec 37
+  - file: files/Lec 38
+  - file: files/Lec 39
+  - file: files/Lec 40
+  - file: files/Lec 41
+  - file: files/Lec 42
+  - file: files/Lec 43
+  - file: files/Lec 44
+  - file: files/Lec 45
+  - file: files/Lec 46
+  - file: files/Lec 47
+  - file: files/Lec 48
+  - file: files/Lec 49
+  - file: files/Lec 50
+  - file: files/Lec 51
+  - file: files/Lec 52
+  - file: files/Lec 53
